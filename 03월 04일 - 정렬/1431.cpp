@@ -10,21 +10,10 @@ int chkSum(string &a)
 
 	for(int i = 0; i < a.length(); i++)
 	{
-		if ( '0' <= a[i] && a[i] <= '9')
+		if (isdigit(a[i]))
 			sum = sum + a[i] - '0';
 	}
 	return sum;
-}
-
-bool chkAlpha(string &a, string &b)
-{
-	for (int i = 0; i < a.length(); i++)
-	{
-		if (a[i] < b[i])
-			return true;
-		if (a[i] > b[i])
-			return false;
-	}
 }
 	// 1. 짧은 것
 	// 2. 자리수의 합이 작은 것
@@ -37,7 +26,7 @@ bool cmparg(string &a, string &b)
 	int b_sum = chkSum(b);
 	if (a_sum != b_sum)
 		return a_sum < b_sum;
-	return chkAlpha(a, b);
+	return a < b;
 }
 
 int main()

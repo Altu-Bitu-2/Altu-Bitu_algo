@@ -19,8 +19,11 @@ int main(){
 
 	long long total = 0;
 	for (int i = 0; i < n; i++)
-		if (v[i] - i > 0)
-			total += v[i] - i;
+	{
+		if (v[i] - i <= 0)
+			break;
+		total += v[i] - i;
+	}
 	cout << total << '\n';
 	return 0;
 }

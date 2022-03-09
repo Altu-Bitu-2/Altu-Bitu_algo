@@ -2,6 +2,8 @@
 
 using namespace std;
 # define DAY 3600*24
+# define HOUR 3600
+# define MIN 60
 
 int main() {
 	// c언어용 버퍼 사용안함.. 딜레이 사라짐. 대신에 c언어 함수 사용 안함
@@ -13,7 +15,7 @@ int main() {
 
 	cin >> h >> m >> s;
 	cin >> q;
-	cur = 3600 * h + 60 * m + s;
+	cur = HOUR * h + MIN * m + s;
 
 	while (q-- > 0)
 	{
@@ -32,7 +34,7 @@ int main() {
 				cur += DAY;
 			break;
 		case 3:
-			cout << (cur/3600)%24 << ' ' << (cur/60)%60 << ' ' <<cur % 60 << '\n';
+			cout << (cur/HOUR)%24 << ' ' << (cur/MIN)%60 << ' ' <<cur % 60 << '\n';
 			break;
 		default:
 			break;

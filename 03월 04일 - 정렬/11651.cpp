@@ -3,6 +3,8 @@
 #include <algorithm>
 using namespace std;
 
+typedef pair<int, int> ci;
+
 // 주소값 조심 ,, 
 bool cmparg(pair <int, int> &a, pair <int, int> &b)
 {
@@ -17,7 +19,7 @@ int main(){
 
 	int n;
 	cin >> n;
-	vector<pair<int, int>> c(n);
+	vector<ci> c(n);
 	for(int i = 0; i < n; i++)
 		cin >> c[i].first >> c[i].second;
 	sort(c.begin(), c.end(), cmparg);
