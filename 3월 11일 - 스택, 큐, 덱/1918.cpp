@@ -18,7 +18,7 @@ int main()
 			op.push(s[i]);
 		else if (s[i] == ')')
 		{
-			while (op.top() != '(')
+			while (!op.empty() && op.top() != '(')
 			{
 				ans += op.top();
 				op.pop();
@@ -27,6 +27,7 @@ int main()
 		}
 		else if (s[i] == '*' || s[i] == '/')
 		{
+			// 
 			while (!op.empty() && (op.top() == '*' && op.top() == '/'))
 			{
 				ans += op.top();
