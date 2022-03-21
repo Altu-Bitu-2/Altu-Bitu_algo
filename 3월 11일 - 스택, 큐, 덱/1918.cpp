@@ -28,7 +28,7 @@ int main()
 		else if (s[i] == '*' || s[i] == '/')
 		{
 			// 
-			while (!op.empty() && (op.top() == '*' && op.top() == '/'))
+			while (!op.empty() && (op.top() == '*' || op.top() == '/'))
 			{
 				ans += op.top();
 				op.pop();
